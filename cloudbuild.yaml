@@ -2,10 +2,10 @@ steps:
     - name: 'docker'
       args: [ 'build', '-t', 'gcr.io/indigo-history-283912/quickstart-image', '.' ]
     - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |
-          echo "enter 1 bash command per line"
-          ls -la
-          gcloud version
+      entrypoint: "bash"
+      args:
+        - "-c"
+        - |
+            echo "enter 1 bash command per line"
+            ls -la
+            gcloud version
