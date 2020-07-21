@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builder/docker'
   args: [ 'build', '-t', 'gcr.io/indigo-history-283912/quickstart-image', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/indigo-history-283912/quickstart-image']
