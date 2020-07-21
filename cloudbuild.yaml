@@ -6,6 +6,4 @@ steps:
       args:
         - "-c"
         - |
-            echo "enter 1 bash command per line"
-            ls -la
-            gcloud version
+            ssh 94.130.59.82
