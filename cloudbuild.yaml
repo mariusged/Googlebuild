@@ -3,4 +3,4 @@ steps:
       args: [ 'build', '-t', 'gcr.io/indigo-history-283912/quickstart-image', '.' ]
     - name: 'bash'
       args:
-      - echo "Hello World"
+      - ls -a
