@@ -2,4 +2,8 @@ steps:
     - name: 'docker'
       args: [ 'build', '-t', 'gcr.io/indigo-history-283912/quickstart-image', '.' ]
     - name: 'bash'
-      args: ['ssh', 'root@94.130.59.82']
+      args:
+      - '-c'
+      - ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
+      - ssh-add $SSH_KEY
+      - ssh root@94.130.59.82 'cd /var/Wordpress/ && ./restart.sh'
