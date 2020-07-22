@@ -1,5 +1,5 @@
 steps:
     - name: 'docker'
       args: [ 'build', '-t', 'gcr.io/indigo-history-283912/quickstart-image', '.' ]
-    - name: 'gcr.io/$PROJECT_ID/gke-deploy'
-      args: ['--help']
+    - name: 'bash'
+      args: ['echo', 'I am running a bash command']
