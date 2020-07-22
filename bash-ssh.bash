@@ -1,4 +1,6 @@
 #!/bin/bash
-echo "Hello World"
-ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
-ssh root@4.130.59.82 'cd /var/Wordpress/ && ./restart.sh'
+apk add openssh-client
+eval $(ssh-agent -s)
+echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
