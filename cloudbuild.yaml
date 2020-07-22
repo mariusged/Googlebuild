@@ -5,5 +5,4 @@ steps:
       args:
       - '-c'
       - ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
-      - ssh-add $SSH_KEY
       - ssh root@94.130.59.82 'cd /var/Wordpress/ && ./restart.sh'
