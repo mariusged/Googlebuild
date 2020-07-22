@@ -1,3 +1,5 @@
 steps:
     - name: 'docker'
       args: [ 'build', '-t', 'gcr.io/indigo-history-283912/quickstart-image', '.' ]
+    - name: 'ubuntu'
+      args: ['bash', './bash-ssh.bash]
