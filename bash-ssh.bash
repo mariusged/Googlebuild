@@ -1,5 +1,4 @@
 #!/bin/bash
-apk add openssh-client
-eval $(ssh-agent -s)
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
+apt-get install openssh-server
+systemctl enable ssh
+systemctl start ssh
