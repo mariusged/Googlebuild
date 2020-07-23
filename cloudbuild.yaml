@@ -4,7 +4,7 @@ steps:
     - name: 'gcr.io/cloud-builders/docker'
       entrypoint: 'bash'
       args: ['-c', 'docker login --username=30062020 --password=$$PASSWORD']
-      secretEnv: ['PASSWORD']
+        secretEnv: ['PASSWORD']
     secrets:
       - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
         secretEnv:
