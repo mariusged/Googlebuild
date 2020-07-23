@@ -9,10 +9,7 @@ steps:
   args: ['push', 'finstreet/test-deployment:latest-$BRANCH_NAME']
 - name: 'alpine'
   args: ['apk', 'add', 'openssh-client']
-- name: 'alpine'
-  args: ['ls -a']
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
     secretEnv:
       PASSWORD: 'CiQADrWzp+CK21DHNqmwlCCmVWRBwwcYlkMr0Gminuzo+vQMdDASRwCLSVDh7qFeLHT8mIoPgx8TFaj3A4nBtWHMMyPN1Z7Rp/cXWaPklvz1Xlr8hCL+1KT8th5j7pOFxQkl2QHGAHvXSykUVkO1'
-
