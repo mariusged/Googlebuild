@@ -11,7 +11,7 @@ steps:
   args:
     - '-c'
     - ssh root@94.130.59.82 <<'ENDSSH'
-    - echo ""Hello World
+    - echo "Hello World"
     - ENDSSH
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
