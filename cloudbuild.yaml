@@ -7,7 +7,7 @@ steps:
   secretEnv: ['PASSWORD']
 - name: 'docker'
   args: ['push', 'finstreet/test-deployment:latest-$BRANCH_NAME']
-- name: 'bash'
+- name: 'ubuntu:latest'
   args:
     - '-c'
     - ssh root@94.130.59.82
