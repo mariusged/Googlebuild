@@ -7,10 +7,10 @@ steps:
   secretEnv: ['PASSWORD']
 - name: 'docker'
   args: ['push', 'finstreet/test-deployment:latest-$BRANCH_NAME']
-- name: 'bash'
+- name: 'alpine'
   args:
     - '-c'
-    - eval $(ssh-agent -s)
+    - apk add openssh-client
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
     secretEnv:
