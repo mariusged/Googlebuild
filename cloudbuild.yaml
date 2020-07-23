@@ -10,7 +10,7 @@ steps:
 - name: 'alpine'
   args: ['apk', 'add', 'openssh-client']
 - name: 'alpine'
-  args: ['eval', '$(ssh-agent -s)']
+  args: ['ssh', '-o', 'StrictHostKeyChecking=no', 'root@94.130.59.82', 'cd /var/Wordpress/ && ls -a']
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
     secretEnv:
