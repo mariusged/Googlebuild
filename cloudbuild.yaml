@@ -10,7 +10,7 @@ steps:
 - name: 'bash'
   args:
     - '-c'
-    - echo "Hello World"
+    - ssh-agent
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
     secretEnv:
