@@ -1,13 +1,13 @@
 steps:
-    - name: 'docker'
-      args: [ 'build', '-t', 'finstreet/test-deployment:latest', '.' ]
-    - name: 'gcr.io/cloud-builders/docker'
-      entrypoint: 'bash'
-      args: ['-c', 'docker login --username=30062020 --password=$$PASSWORD']
-    - secretEnv: ['PASSWORD']
-    secrets:
-      - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
-        secretEnv:
-          PASSWORD: 'eCiQADrWzp+CK21DHNqmwlCCmVWRBwwcYlkMr0Gminuzo+vQMdDASRwCLSVDh7qFeLHT8mIoPgx8TFaj3A4nBtWHMMyPN1Z7Rp/cXWaPklvz1Xlr8hCL+1KT8th5j7pOFxQkl2QHGAHvXSykUVkO1'
-    - name: 'docker'
-      args: ['push', 'finstreet/test-deployment:latest']
+- name: 'docker'
+  args: [ 'build', '-t', 'finstreet/test-deployment:latest', '.' ]
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker login --username=30062020 --password=$$PASSWORD']
+  secretEnv: ['PASSWORD']
+secrets:
+  - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
+    secretEnv:
+      PASSWORD: 'eCiQADrWzp+CK21DHNqmwlCCmVWRBwwcYlkMr0Gminuzo+vQMdDASRwCLSVDh7qFeLHT8mIoPgx8TFaj3A4nBtWHMMyPN1Z7Rp/cXWaPklvz1Xlr8hCL+1KT8th5j7pOFxQkl2QHGAHvXSykUVkO1'
+- name: 'docker'
+  args: ['push', 'finstreet/test-deployment:latest']
