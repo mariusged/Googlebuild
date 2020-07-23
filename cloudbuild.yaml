@@ -1,7 +1,7 @@
 steps:
 - name: 'docker'
   args: [ 'build', '-t', 'finstreet/test-deployment:latest-$BRANCH_NAME', '.' ]
-- name: 'docker'
+- name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
   args: ['-c', 'docker login --username=30062020 --password=$$PASSWORD']
   secretEnv: ['PASSWORD']
