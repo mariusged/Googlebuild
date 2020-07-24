@@ -1,4 +1,15 @@
 steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - kms
+  - decrypt
+  - --ciphertext-file=.env.env
+  - --plaintext-file=.env
+  - --location=global
+  - --keyring=myproject
+  - --key=cloudbuild-env
+- name: 'bash'
+  args: ['echo', '$SSH-KEY']
 - name: 'docker'
   args: [ 'build', '-t', 'finstreet/test-deployment:latest-$BRANCH_NAME', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
