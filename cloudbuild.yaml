@@ -19,7 +19,7 @@ steps:
 - name: 'docker'
   args: ['push', 'finstreet/test-deployment:latest-$BRANCH_NAME']
 - name: 'docker'
-  args: ['run', 'buildo/alpine-ssh', 'ssh-add', '$$SSH_KEY']
+  args: ['run', 'buildo/alpine-ssh', 'ssh', '-i', '$$SSH_KEY', 'root@92.130.59.82']
   secretEnv: ['SSH_KEY']
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
