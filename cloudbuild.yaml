@@ -3,7 +3,7 @@ steps:
   args:
   - kms
   - decrypt
-  - --ciphertext-file=.env.env
+  - --ciphertext-file=env.env
   - --plaintext-file=.env
   - --location=global
   - --keyring=myproject
