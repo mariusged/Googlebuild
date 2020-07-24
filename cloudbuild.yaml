@@ -1,15 +1,4 @@
 steps:
-#- name: 'gcr.io/cloud-builders/gcloud'
-#  args:
-#  - kms
-#  - decrypt
-#  - --ciphertext-file=.env.env
-#  - --plaintext-file=.env
-#  - --location=global
-#  - --keyring=myproject
-#  - --key=cloudbuild-env
-#- name: 'bash'
-#  args: ['echo', '$SSH-KEY']
 - name: 'docker'
   args: [ 'build', '-t', 'finstreet/test-deployment:latest-$BRANCH_NAME', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
@@ -19,7 +8,8 @@ steps:
 - name: 'docker'
   args: ['push', 'finstreet/test-deployment:latest-$BRANCH_NAME']
 - name: 'docker'
-  args: ['run', 'buildo/alpine-ssh', 'ssh', '-i', '$$SSH_KEY', 'root@94.130.59.82']
+   args: ['run', 'buildo/alpine-ssh', 'ssh', 'ls -l']
+#  args: ['run', 'buildo/alpine-ssh', 'ssh', '-i', '$$SSH_KEY', 'root@94.130.59.82']
   secretEnv: ['SSH_KEY']
 secrets:
   - kmsKeyName: projects/indigo-history-283912/locations/global/keyRings/DOCKER_PASSWORD/cryptoKeys/DOCKER_PASSWORD
