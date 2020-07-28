@@ -1,6 +1,5 @@
 FROM nginx:1.15.0-alpine
 
-ENV PORT process.env.PORT || 8080
 ENV INSTALL_PATH /test-deployment
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
