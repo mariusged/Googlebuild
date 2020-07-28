@@ -4,7 +4,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/indigo-history-283912/test-deployment:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'deployment', '--region=europe-west1', '--platform=managed', '--image=gcr.io/$PROJECT_ID/test-deployment:$SHORT_SHA']
+  args: ['run', 'deploy', 'deployment', '--region=europe-west1', '--platform=managed', '--image=gcr.io/$PROJECT_ID/test-deployment:$SHORT_SHA']
 
 
 #- name: 'docker'
