@@ -5,6 +5,7 @@ ENV INSTALL_PATH /test-deployment
 RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 COPY ./public_html .
+CMD node server.js
 
 RUN rm /etc/nginx/nginx.conf
 COPY ./nginx.conf /etc/nginx/nginx.conf
