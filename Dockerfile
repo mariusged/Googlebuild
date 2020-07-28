@@ -9,13 +9,14 @@ CMD node server.js
 RUN rm /etc/nginx/nginx.conf
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
-EXPOSE 80
+RUN sed -i 's/80/8080/g' /etc/nginx/conf.d/default.conf
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
 
-FROM node:13-slim
+#FROM node:13-slim
 
-WORKDIR /app
+#WORKDIR /app
 
-ADD . /app
+#ADD . /app
 
-CMD node server.js
+#CMD node server.js
