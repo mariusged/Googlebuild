@@ -1,4 +1,4 @@
-FROM nginx:1.15.0-alpine
+FROM nginx:stable-alpine as production-stage
 
 ENV INSTALL_PATH /test-deployment
 RUN mkdir -p $INSTALL_PATH
