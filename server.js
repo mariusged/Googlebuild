@@ -4,4 +4,5 @@ const server = http.createServer((req, res) => {
     res.end('Hello World - mit ci cd')
 })
 const PORT = process.env.PORT || 8080
-server.listen(PORT, () => console.log('Listening'))
+server.listen(PORT, () => console.log('Hello world listening on port', port);
+)
